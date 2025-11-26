@@ -1,0 +1,6 @@
+@game:sword,shield
+_ZN5orion6battle24RegisterAbilityCallbacksEmmm = 0x82fa00
+_ZN5orion6battle23RegisterAbilityCallbackEmmm = 0x83a6a0
+_ZN5orion6battle21GetBattlePokemonIndexEm = 0x7e0a00
+_ZN5orion6battle21GetBattlePokemonFieldEmm = 0x7e12a0
+_ZN5orion6battle18GetFusionAbilitiesEmmPj = 0x8260c0
