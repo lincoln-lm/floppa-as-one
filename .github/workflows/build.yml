@@ -23,12 +23,18 @@ jobs:
           sudo ln -sf /usr/bin/clang-20 /usr/bin/clang
           sudo ln -sf /usr/bin/clang++-20 /usr/bin/clang++
           python3 -m pip install pyelftools mmh lz4
-      - name: Build
+      - name: Build Sword
+        env:
+          TITLE_ID: 0x0100ABF008968000
         run: |
           rm -rf build
           cmake -B build -DCMAKE_BUILD_TYPE="Debug"
-          export TITLE_ID=0x0100ABF008968000 && cmake --build build -j $(nproc)
-          export TITLE_ID=0x01008DB008C2C000 && cmake --build build -j $(nproc)
+          cmake --build build -j $(nproc)
+      - name: Build Shield
+        env:
+          TITLE_ID: 0x01008DB008C2C000
+        run: |
+          cmake --build build -j $(nproc)
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
